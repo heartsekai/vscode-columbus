@@ -1,0 +1,441 @@
+{
+    "Add Net": {
+        "prefix": "AddNet",
+        "body": [
+            "AddNet "
+        ],
+        "description": "something"
+    },
+    "Attrib": {
+        "prefix": "Attrib",
+        "body": [
+            "Attrib "
+        ],
+        "description": "something"
+    },
+    "Begin Script": {
+        "prefix": "begin",
+        "body": [
+            "BEGIN SCRIPT '${1:VBScript}' '${2:Main}' '${3:COMPUTER}'",
+            "\tFunction Main ()",
+            "\t\t$9",
+            "\tEnd Function",
+            "END SCRIPT"
+        ],
+        "description": "Begin Script Block"
+    },
+    "Cancel Net": {
+        "prefix": "CancelNet",
+        "body": [
+            "CancelNet "
+        ],
+        "description": "something"
+    },
+    "CancelSystemRestorePoint": {
+        "prefix": "CancelSystemRestorePoint",
+        "body": [
+            "CancelSystemRestorePoint '$1' ${2:/NoErrors}"
+        ],
+        "description": "something"
+    },
+    "CD": {
+        "prefix": "CD",
+        "body": [
+            "CD '${1:Directory}' ${2:/NoFileSystemRedirection}",
+            "$0"
+        ],
+        "description": "something"
+    },
+    "Change Password": {
+        "prefix": "ChangePW",
+        "body": [
+            "ChangePW '${1:DomainComputer}' '${2:USERNAME}' '${3:PASSWORD}'"
+        ],
+        "description": "something"
+    },
+    "Client Config": {
+        "prefix": "ClientConfig",
+        "body": [
+            "ClientConfig '${1:template}' '${2:/NoFileSystemRedirection}'"
+        ],
+        "description": "something"
+    },
+    "Copy": {
+        "prefix": "Copy",
+        "body": [
+            "Copy '${1:FromFile}' TO '${2:ToPath}' ${3:/+R} ${4:/-R} ${5:/+O} ${6:/-O} ${7:/Sub} ${8:/Newer} ${9:/Changed} ${10:/Version} ${11:/MOVE} ${12:/NoErrors} ${13:/NOREBOOTOPERATIONS} ${14:/NoFileSystemRedirection}"
+        ],
+        "description": "something"
+    },
+    "Delete": {
+        "prefix": "Delete",
+        "body": [
+            "Delete '${9:file}' ${1:/NoError} ${2:/NoRebootOperations} ${3:/NoFileSystemRedirection}"
+        ],
+        "description": "something"
+    },
+    "Error": {
+        "prefix": "Error",
+        "body": [
+            "Error ${1:ON}"
+        ],
+        "description": "something"
+    },
+    "Exit": {
+        "prefix": "Exit",
+        "body": [
+            "Exit '${1:message}'"
+        ],
+        "description": "something"
+    },
+    "Expand": {
+        "prefix": "Expand",
+        "body": [
+            "EXPAND '${10:FromZip}' TO '${11:ToPath}' ${1:/+R} ${2:/-R} ${3:/+O} ${4:/-O} ${5:/Newer} ${6:/Changed} ${7:/Version} ${8:/NoErrors} ${9:/NoFileSystemRedirection}"
+        ],
+        "description": "something"
+    },
+    "File System Redirection": {
+        "prefix": "FileSystemRedirection",
+        "body": [
+            "FileSystemRedirection '${2:ON}' ${1:/NoErrors}"
+        ],
+        "description": "something"
+    },
+    "Font": {
+        "prefix": "Font",
+        "body": [
+            "Font '${9:FontFile}' ${1:/Add} ${2:/NoErrors} ${3:/NoFileSystemRedirection}"
+        ],
+        "description": "something"
+    },
+    "If": {
+        "prefix": "If",
+        "body": [
+            "If "
+        ],
+        "description": "something"
+    },
+    "If Diskfree": {
+        "prefix": "If Diskfree",
+        "body": [
+            "If Diskfree "
+        ],
+        "description": "something"
+    },
+    "If File": {
+        "prefix": "If File",
+        "body": [
+            "If File "
+        ],
+        "description": "something"
+    },
+    "If File Version": {
+        "prefix": "If FileVersion",
+        "body": [
+            "If FileVersion "
+        ],
+        "description": "something"
+    },
+    "If Group": {
+        "prefix": "If Group",
+        "body": [
+            "If Group "
+        ],
+        "description": "something"
+    },
+    "If Installed": {
+        "prefix": "If Installed",
+        "body": [
+            "If Installed "
+        ],
+        "description": "something"
+    },
+    "IniRead": {
+        "prefix": "Ini Read",
+        "body": [
+            "IniRead '${1:section}' '${2:key}' '${3:defaultValue}' '${4:file}' '${5:VariableName}' /${6:User} ${7:/Immediate}"
+        ],
+        "description": "something"
+    },
+    "IniWrite": {
+        "prefix": "Ini Write",
+        "body": [
+            "IniWrite '${1:section}' '${2:key}' '${3:defaultValue}' '${4:file}'${5: /NoErrors}${6: /NoFileSystemRedirection}"
+        ],
+        "description": "something"
+    },
+    "Inventory": {
+        "prefix": "Inventory",
+        "body": [
+            "Inventory '${1:TreeItem} ${2:DataItem}' '${3:Value}' ${4:/User}"
+        ],
+        "description": "something"
+    },
+    "Goto": {
+        "prefix": "Goto",
+        "body": [
+            "Goto ${1:label}\n:${1:label}"
+        ],
+        "description": "something"
+    },
+    "Load Variables": {
+        "prefix": "Load Variables",
+        "body": [
+            "Load Variables '${9:section}' '${10:file}' ${1:/Machine} ${2:/Immediate} ${3:/Volatile} ${4:/NoFileSystemRedirection}"
+        ],
+        "description": "something"
+    },
+    "Log": {
+        "prefix": "Log",
+        "body": [
+            "Log '${9:message}' ${1:/MEMORY}"
+        ],
+        "description": "something"
+    },
+    "Make Directory": {
+        "prefix": "Make Directory",
+        "body": [
+            "MD '${9:Directory}' ${1:/NoFileSystemRedirection}"
+        ],
+        "description": "something"
+    },
+    "MSI": {
+        "prefix": "MSI",
+        "body": [
+            "MSI '${9:Packagepath}' '${10:/POPERTY}' ${1:/NONE}"
+        ],
+        "description": "something"
+    },
+    "MsiPatch": {
+        "prefix": "MsiPatch",
+        "body": [
+            "MSIPATCH '${9:Packagepath}' '${10:/POPERTY}' ${1:/NONE}"
+        ],
+        "description": "something"
+    },
+    "Path": {
+        "prefix": "Path",
+        "body": [
+            "Path '${9:PathString}' ${1:/Add}"
+        ],
+        "description": "something"
+    },
+    "Play": {
+        "prefix": "Play",
+        "body": [
+            "Play '${1:wavFile}'"
+        ],
+        "description": "something"
+    },
+    "Remove Directory": {
+        "prefix": "Remove Directory",
+        "body": [
+            "RD '${9:Directory}'"
+        ],
+        "description": "something"
+    },
+    "Register32": {
+        "prefix": "Register32",
+        "body": [
+            "Register32 'HKEY_$2' 'SOFTWARE$1' '$3' '$4' 'REG_$5'"
+        ],
+        "description": "something"
+    },
+    "Register64": {
+        "prefix": "Register64",
+        "body": [
+            "Register64 'HKEY_$2' 'SOFTWARE$1' '$3' '$4' 'REG_$5'"
+        ],
+        "description": "something"
+    },
+    "Register File": {
+        "prefix": "RegisterFile",
+        "body": [
+            "RegisterFile '${9:file}' ${1:/NOERRORS}"
+        ],
+        "description": "something"
+    },
+    "Register Permisions": {
+        "prefix": "Register Permisions",
+        "body": [
+            "RegPerm '${9:HKEY_}' '${10:Subkey}' '${11:Group/User}' '${12:Rights}' '${13:Flags}' "
+        ],
+        "description": "something"
+    },
+    "Register Permisions 64": {
+        "prefix": "Register Permisions 64",
+        "body": [
+            "RegPerm64 '${9:HKEY_}' '${10:Subkey}' '${11:Group/User}' '${12:Rights}' '${13:Flags}' "
+        ],
+        "description": "something"
+    },
+    "Register Read": {
+        "prefix": "Register Read",
+        "body": [
+            "RegRead '${9:HKEY_}' '${10:Subkey}' '${11:ValueName}' '${12:VariableName}'"
+        ],
+        "description": "something"
+    },
+    "Register Read 64": {
+        "prefix": "Register Read 64",
+        "body": [
+            "RegRead64 '${9:HKEY_}' '${10:Subkey}' '${11:ValueName}' '${12:VariableName}'"
+        ],
+        "description": "something"
+    },
+    "Rename": {
+        "prefix": "Rename",
+        "body": [
+            "Rename '${9:Source}' '${10:Target}'"
+        ],
+        "description": "something"
+    },
+    "Replace": {
+        "prefix": "Replace",
+        "body": [
+            "Replace '${9:Input}' '${10:StringToReplace}' '${11:Replacement}' '${12:OutputVariable}'"
+        ],
+        "description": "something"
+    },
+    "Return": {
+        "prefix": "Return",
+        "body": [
+            "Return"
+        ],
+        "description": "something"
+    },
+    "Run": {
+        "prefix": "Run",
+        "body": [
+            "Run '${9:Program}'"
+        ],
+        "description": "something"
+    },
+    "Run64": {
+        "prefix": "Run64",
+        "body": [
+            "Run64 '${9:Program}' '${10:Parameter}' '${11:Starting Directory}'"
+        ],
+        "description": "something"
+    },
+    "RunAs": {
+        "prefix": "RunAs",
+        "body": [
+            "RunAs '${1:COMPUTER}' '${2:USERNAME}' '${3:PASSWORD}' '$4' '' '$5' ${6:Show} ${7:Waitdown} ${8:Task:10}"
+        ],
+        "description": "something"
+    },
+    "Service": {
+        "prefix": "Service",
+        "body": [
+            "Service '${9:Name}' '${10:/Start}'"
+        ],
+        "description": "something"
+    },
+    "Service Install": {
+        "prefix": "Service Install",
+        "body": [
+            "Service '${9:Name}' '${10:File}' '${11:DisplayName}' '${12:Group}' '${13:User}' '${14:PASSWORD}' /Install $15"
+        ],
+        "description": "something"
+    },
+    "Set": {
+        "prefix": "Set",
+        "body": [
+            "Set ${9:Variable}='${10:Value}'"
+        ],
+        "description": "something"
+    },
+    "Set System Restore Point": {
+        "prefix": "Set System Restore Point",
+        "body": [
+            "SetSystemRestorePoint '${9:Name}'"
+        ],
+        "description": "something"
+    },
+    "Shared Dll Counter": {
+        "prefix": "ChanShared Dll CountergePW",
+        "body": [
+            "SharedDLLCounter '${9:FileName}'"
+        ],
+        "description": "something"
+    },
+    "Shared Dll Counter 64": {
+        "prefix": "Shared Dll Counter 64",
+        "body": [
+            "SharedDLLCounter64 '${9:FileName}'"
+        ],
+        "description": "something"
+    },
+    "Shortcut": {
+        "prefix": "Shortcut",
+        "body": [
+            "Shortcut '${9:LinkFile}' '${10:FileToLaunch}' '${11:StartDirecotry}' '${12:Icon}'"
+        ],
+        "description": "something"
+    },
+    "Shortcut Delete": {
+        "prefix": "Shortcut Delete",
+        "body": [
+            "Shortcut '${:}' /Delete "
+        ],
+        "description": "something"
+    },
+    "System": {
+        "prefix": "ChangePW",
+        "body": [
+            "System "
+        ],
+        "description": "something"
+    },
+    "Textfile": {
+        "prefix": "TextFile",
+        "body": [
+            "Textfile '${9:FileName}' '${10:Textline}' ${1:/Add}"
+        ],
+        "description": "something"
+    },
+    "Unregister File": {
+        "prefix": "Unregister File",
+        "body": [
+            "UnRegisterFile '${9:File}'"
+        ],
+        "description": "something"
+    },
+    "Wait": {
+        "prefix": "Wait",
+        "body": [
+            "Wait $1"
+        ],
+        "description": "something"
+    },
+    "Wallpaper": {
+        "prefix": "WallPaper",
+        "body": [
+            "WallPaper '${9:FilePath}' ${1:/User}"
+        ],
+        "description": "something"
+    },
+    "Wmi Read": {
+        "prefix": "Wmi Read",
+        "body": [
+            "WMIRead '${9:Machine}' '${10:WmiClass}' '${11:WmiProperty}' '${12:WqlStatement}' '${13:VariableName}'"
+        ],
+        "description": "something"
+    },
+    "Wmi Read List": {
+        "prefix": "Wmi Read List",
+        "body": [
+            "WMIReadList "
+        ],
+        "description": "something"
+    },
+    "Write Inventory": {
+        "prefix": "Write Inventory",
+        "body": [
+            "WriteInventory '${9:DataClass}' '${10:DataItem}' '${11:Title}' '${12:Value}' '${13:ValueType}' ${1:/User}"
+        ],
+        "description": "something"
+    }
+}

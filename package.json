@@ -8,17 +8,47 @@
         "vscode": "^1.0.0"
     },
     "categories": [
-        "Other"
+        "Languages",
+        "Snippets"
     ],
     "activationEvents": [
-        "onCommand:extension.sayHello"
+        "onCommand:extension.sayHello",
+        "onLanguage:Columbus"
     ],
     "main": "./out/src/extension",
     "contributes": {
-        "commands": [{
-            "command": "extension.sayHello",
-            "title": "Hello World"
-        }]
+        "commands": [
+            {
+                "command": "extension.sayHello",
+                "title": "Hello World"
+            }
+        ],
+        "languages": [
+            {
+                "id": "columbus",
+                "aliases": [
+                    "Columbus File",
+                    "columbus"
+                ],
+                "extensions": [
+                    ".wms"
+                ],
+                "configuration": "./columbus.configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "columbus",
+                "scopeName": "source.columbus",
+                "path": "./syntaxes/columbus.tmLanguage"
+            }
+        ],
+        "snippets": [
+            {
+                "language": "columbus",
+                "path": "./snippets/columbus.json"
+            }
+        ]
     },
     "scripts": {
         "vscode:prepublish": "node ./node_modules/vscode/bin/compile",

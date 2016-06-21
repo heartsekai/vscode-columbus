@@ -1,0 +1,37 @@
+; SYNTAX TEST "Packages/User/Columbus/Columbus.sublime-syntax"
+[Header]
+Author = "Joan Badia"
+Version=1.0.1
+
+[userAdd]
+;lets ask something
+;^ comment.line.Columbus
+if not '%username%'="Joan" then goto end_UserAdd
+If Diskfree if
+if if
+BEGIN SCRIPT 'VBScript' 'Main' 'COMPUTER'
+	Function Main ()
+
+	End Function
+END SCRIPT
+"hi"
+MD 'c:\Users\Joan\Desktop\Test'
+MD 'Directory' /NoFileSystemRedirection /add //8.3
+If Installed
+Register64 'HKCU' 'Software\Brainware\Test' 'no_key' 'REG_SZ' 'someValue'
+if not file show
+:end_UserAdd
+
+Service 'Name' '/Start' AddIfMissing
+[userrepeat]
+Goto Test
+Register32 'HKEY_' 'SOFTWARE' '' 'REG_' '' /add
+Register32 'HKEY_' 'SOFTWARE' '' 'REG_' ''
+:Test
+BEGIN SCRIPT 'VBScript' 'Main' 'COMPUTER'
+	Function Main ()
+
+	End Function
+END SCRIPT
+[userremove]
+AddIfMissing
