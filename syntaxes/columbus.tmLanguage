@@ -7,6 +7,29 @@
         <key>patterns</key>
         <array>
             <dict>
+                <key>captures</key>
+                <dict>
+                    <key>1</key>
+                    <dict>
+                        <key>name</key>
+                        <string>variable.language<</string>
+                    </dict>
+                    <key>2</key>
+                    <dict>
+                        <key>name</key>
+                        <string>punctuation.definition.equals.ini</string>
+                    </dict>
+                    <key>3</key>
+                    <dict>
+                        <key>name</key>
+                        <string>constant.numeric.Columbus</string>
+                    </dict>
+                </dict>
+                <key>name</key>
+                <key>match</key>
+                <string>^\s*([aA-zZ]+)\s*(=)\s*(.+)</string>
+            </dict>
+            <dict>
                 <key>name</key>
                 <string>keyword.command.columbus</string>
                 <key>match</key>
@@ -30,18 +53,22 @@
                     <key>1</key>
                     <dict>
                         <key>name</key>
-                        <string>entity.name.class<string>
+                        <string>keyword.command.columbus<</string>
                     </dict>
-
-                </dict>
+                    <key>2</key>
+                    <dict>
+                        <key>name</key>
+                        <string>entity.name.function entity.name.tag</string>
+                    </dict>
+                </dict>                
                 <key>name</key>
-                <string>keyword.command.columbus</string>
+                <!--<string>keyword.command.columbus</string>-->
                 <key>match</key>
                 <string>\b(?i)(Goto)\b\s+([A-Za-z_]+)</string>
             </dict>
             <dict>
                 <key>name</key>
-                <string>entity.name.class</string>
+                <string>entity.name.function entity.name.tag</string>
                 <key>match</key>
                 <string>^\s*(:)([A-Za-z_]+)</string>
             </dict>
@@ -59,87 +86,9 @@
             </dict>
             <dict>
                 <key>name</key>
-                <string>keyword.control.repeat.columbus</string>
-                <key>match</key>
-                <string>\b(?i)for\b</string>
-            </dict>
-            <dict>
-                <key>name</key>
-                <string>keyword.operator.columbus</string>
-                <key>match</key>
-                <string>\b(?:EQU|NEQ|LSS|LEQ|GTR|GEQ)\b</string>
-            </dict>
-            <dict>
-                <key>name</key>
-                <string>comment.line.rem.columbus</string>
+                <string>comment.line.columbus</string>
                 <key>match</key>
                 <string>;($|.*$)</string>
-            </dict>
-            <dict>
-                <key>captures</key>
-                <dict>
-                    <key>1</key>
-                    <dict>
-                        <key>name</key>
-                        <string>variable.parameter.function.begin.shell</string>
-                    </dict>
-                </dict>
-                <key>name</key>
-                <string>variable.parameter.function.columbus</string>
-                <key>match</key>
-                <string>(?i)(%)(~(?:f|d|p|n|x|s|a|t|z|\$[^:]*:)*)?\d</string>
-            </dict>
-            <dict>
-                <key>captures</key>
-                <dict>
-                    <key>1</key>
-                    <dict>
-                        <key>name</key>
-                        <string>variable.parameter.loop.begin.shell</string>
-                    </dict>
-                </dict>
-                <key>name</key>
-                <string>variable.parameter.loop.columbus</string>
-                <key>match</key>
-                <string>(?i)(%%)(~(?:f|d|p|n|x|s|a|t|z|\$[^:]*:)*)?[a-z]</string>
-            </dict>
-            <dict>
-                <key>captures</key>
-                <dict>
-                    <key>1</key>
-                    <dict>
-                        <key>name</key>
-                        <string>variable.other.parsetime.begin.shell</string>
-                    </dict>
-                    <key>2</key>
-                    <dict>
-                        <key>name</key>
-                        <string>variable.other.parsetime.end.shell</string>
-                    </dict>
-                </dict>
-                <key>name</key>
-                <string>variable.other.parsetime.columbus</string>
-                <key>match</key>
-                <string>(%)[^%]+(%)</string>
-            </dict>
-            <dict>
-                <key>captures</key>
-                <dict>
-                    <key>1</key>
-                    <dict>
-                        <key>name</key>
-                        <string>variable.other.delayed.begin.shell</string>
-                    </dict>
-                    <key>2</key>
-                    <dict>
-                        <key>name</key>
-                        <string>variable.other.delayed.end.shell</string>
-                    </dict>
-                </dict>
-                <key>name</key>
-                <string>variable.other.delayed.columbus</string>
-                <key>match</key>
-                <string>(!)[^!]+(!)</string>
             </dict>
             <dict>
                 <key>begin</key>
@@ -195,15 +144,9 @@
                 <key>match</key>
                 <string>[|]</string>
             </dict>
-            <dict>
-                <key>name</key>
-                <string>keyword.operator.redirect.shell</string>
-                <key>match</key>
-                <string>&amp;&gt;|\d*&gt;&amp;\d*|\d*(&gt;&gt;|&gt;|&lt;)|\d*&lt;&amp;|\d*&lt;&gt;</string>
-            </dict>
         </array>
         <key>name</key>
-        <string>Columbus File</string>
+        <string>Columbus</string>
         <key>scopeName</key>
         <string>source.columbus</string>
         <key>fileTypes</key>
@@ -211,4 +154,46 @@
             <string>wms</string>
         </array>
     </dict>
+    <!-- Standard Scopes
+    comment
+    constant
+    constant.character.escape
+    constant.language
+    constant.numeric
+    declaration.section entity.name.section
+    declaration.tag
+    deco.folding
+    entity.name.function
+    entity.name.tag
+    entity.name.type
+    entity.other.attribute-name
+    entity.other.inherited-class
+    invalid
+    invalid.deprecated.trailing-whitespace
+    keyword
+    keyword.control.import
+    keyword.operator.js
+    markup.heading
+    markup.list
+    markup.quote
+    meta.embedded
+    meta.preprocessor
+    meta.section entity.name.section
+    meta.tag
+    storage
+    storage.type.method
+    string
+    string source
+    string.unquoted
+    support.class
+    support.constant
+    support.function
+    support.type
+    support.variable
+    text source
+    variable
+    variable.language
+    variable.other
+    variable.parameter
+    -->
 </plist>
