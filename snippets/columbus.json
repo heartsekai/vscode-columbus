@@ -63,7 +63,7 @@
     "Copy": {
         "prefix": "Copy",
         "body": [
-            "Copy '${1:FromFile}' TO '${2:ToPath}' ${3:/+R} ${4:/-R} ${5:/+O} ${6:/-O} ${7:/Sub} ${8:/Newer} ${9:/Changed} ${10:/Version} ${11:/MOVE} ${12:/NoErrors} ${13:/NOREBOOTOPERATIONS} ${14:/NoFileSystemRedirection}"
+            "Copy '${1:FromFile}' TO '${2:ToPath}' ${12:/NoErrors} ${13:/NOREBOOTOPERATIONS}"
         ],
         "description": "something"
     },
@@ -109,10 +109,22 @@
         ],
         "description": "something"
     },
+    "Header": {
+        "prefix": "Header",
+        "body": [
+            "[Header]",
+            "Description=${Delivery script}",
+            "Creation=${YYYYMMddHHmm}",
+            "PM_Version=${5.2.1.0}",
+            "Author=${Suva IFS} / ${Username}",
+            "$0"
+        ],
+        "description": "Create header of new Package"
+    },
     "If": {
         "prefix": "If",
         "body": [
-            "If "
+            "If '${Variable}'='${String}' then"
         ],
         "description": "something"
     },
@@ -126,7 +138,7 @@
     "If File": {
         "prefix": "If File",
         "body": [
-            "If File "
+            "If File '{$1:FilePath}' then $2"
         ],
         "description": "something"
     },
@@ -147,7 +159,21 @@
     "If Installed": {
         "prefix": "If Installed",
         "body": [
-            "If Installed "
+            "; Installieren ${Package Name}",
+            "If Installed 'MSIPRODUCT' '{${GUID}}' then goto Inst_OK",
+            "Run '${%_PkgCache%\\.exe /quiet /passive /norestart}'${ HIDE}${ waitdown}${ task}",
+            "If not Installed 'MSIPRODUCT' '{${GUID}}' then Exit '${Package Name} ist nicht installiert'",
+            "",
+            ":Inst_OK",
+            "",
+            "$0"
+        ],
+        "description": "something"
+    },
+    "If Not File": {
+        "prefix": "If Not File",
+        "body": [
+            "If not File '${FilePath}' then $0"
         ],
         "description": "something"
     },
@@ -238,7 +264,14 @@
     "Register32": {
         "prefix": "Register32",
         "body": [
-            "Register32 'HKEY_$2' 'SOFTWARE$1' '$3' '$4' 'REG_$5'"
+            "Register32 'HKEY_$2' 'SOFTWARE$1' '${3:Keyname}' '${4:KeyValue}' 'REG_$5'"
+        ],
+        "description": "something"
+    },
+    "Register32 Dword": {
+        "prefix": "Register32 Dword",
+        "body": [
+            "Register32 'HKEY_${CURRENT_USER}' 'SOFTWARE\\$1' '${3:Keyname}' '${4:0}' 'REG_DWORD'"
         ],
         "description": "something"
     },
@@ -308,21 +341,32 @@
     "Run": {
         "prefix": "Run",
         "body": [
-            "Run '${9:Program}'"
+            "Run '${9:%_PkgCache%\\.exe /quiet /passive /norestart}'${10: HIDE}${11: waitdown}${12: task}"
         ],
         "description": "something"
     },
     "Run64": {
         "prefix": "Run64",
         "body": [
-            "Run64 '${9:Program}' '${10:Parameter}' '${11:Starting Directory}'"
+            "Run64 '${9:Program}' '${10:Parameter}' '${11:Starting Directory}'${12: HIDE}${13: waitdown}${14: task}"
+        ],
+        "description": "something"
+    },
+    "Run64 Powershell": {
+        "prefix": "Run64 Powershell",
+        "body": [
+            ";Powershell Script",
+            "copy '%_PkgCache%\\${Client}\\${scriptname}.ps1' to '%_Temp%\\${scriptname}.ps1' /sub /changed",
+            "",
+            "Run64 '%_WindowsSystem64%\\WindowsPowerShell\\v1.0\\PowerShell.exe' '-ExecutionPolicy Bypass -Noninteractive -NoLogo -File \"%_Temp%\\${scriptname}.ps1\"' '${11:Starting Directory}' HIDE WAITDOWN TASK:10",
+            ""
         ],
         "description": "something"
     },
     "RunAs": {
         "prefix": "RunAs",
         "body": [
-            "RunAs '${1:COMPUTER}' '${2:USERNAME}' '${3:PASSWORD}' '$4' '' '$5' ${6:Show} ${7:Waitdown} ${8:Task:10}"
+            "RunAs '${1:COMPUTER}' '${2:USERNAME}' '${3:PASSWORD}' '${4:Command}' '${5:Parameters}' '$6'${9: Show}${10: Waitdown}${11: Task:10}${12: /LoadUserProfile}"
         ],
         "description": "something"
     },
