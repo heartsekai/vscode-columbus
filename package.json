@@ -4,51 +4,26 @@
     "description": "Helper for Columbus Packages",
     "version": "0.0.1",
     "publisher": "CanLustenberger",
-    "engines": {
-        "vscode": "^1.0.0"
-    },
-    "categories": [
-        "Languages",
-        "Snippets"
-    ],
-    "activationEvents": [
-        "onCommand:extension.sayHello",
-        "onLanguage:Columbus"
-    ],
+    "engines": { "vscode": "^1.0.0" },
     "main": "./out/src/extension",
+    "categories": [ "Languages", "Snippets" ],
+    "activationEvents": [ "onLanguage:Columbus" ],
     "contributes": {
-        "commands": [
-            {
-                "command": "extension.sayHello",
-                "title": "Hello World"
-            }
-        ],
-        "languages": [
-            {
-                "id": "columbus",
-                "aliases": [
-                    "Columbus",
-                    "columbus"
-                ],
-                "extensions": [
-                    ".wms"
-                ],
+        "languages": [{
+                "id": "Columbus",
+                "aliases": ["Columbus", "columbus"],
+                "extensions": [".wms"],
                 "configuration": "./columbus.configuration.json"
-            }
-        ],
-        "grammars": [
-            {
-                "language": "columbus",
+        }],
+        "grammars": [{
+                "language": "Columbus",
                 "scopeName": "source.columbus",
                 "path": "./syntaxes/columbus.tmLanguage"
-            }
-        ],
-        "snippets": [
-            {
-                "language": "columbus",
+        }],
+        "snippets": [{
+                "language": "Columbus",
                 "path": "./snippets/columbus.json"
-            }
-        ]
+        }]
     },
     "scripts": {
         "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
