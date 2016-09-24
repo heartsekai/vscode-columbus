@@ -19,8 +19,8 @@ export default class WMSHoverProvider implements HoverProvider {
         }
 
         let name = document.getText(wordRange);
-        if (Library.Library[name]) {
-            return new Hover(Library.Library[name].parameters, wordRange);
+        if (Library.Library[name.toLowerCase()]) {
+            return new Hover(Library.Library[name.toLowerCase()].syntax, wordRange);
         }
 
     }
