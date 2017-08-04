@@ -12,7 +12,7 @@
                     <key>1</key>
                     <dict>
                         <key>name</key>
-                        <string>variable.language<</string>
+                        <string>variable.language</string>
                     </dict>
                     <key>2</key>
                     <dict>
@@ -25,15 +25,16 @@
                         <string>constant.numeric.Columbus</string>
                     </dict>
                 </dict>
-                <key>name</key>
                 <key>match</key>
                 <string>^\s*([aA-zZ]+)\s*(=)\s*(.+)</string>
+                <key>name</key>
+                <string>keyword.command.columbus</string>
             </dict>
             <dict>
                 <key>name</key>
                 <string>keyword.command.columbus</string>
                 <key>match</key>
-                <string>^\s*\b(?i)(?:AddNet|Attrib|Begin Script|CancelNet|CancelSystemRestorePoint|CD|ChangePW|ClientConfig|Copy|Delete|End Script|Error|Exit|Expand|FileSystemRedirection|Font|IniRead|IniWrite|Inventory|Load Variables|Log|MD|MSI|MSIPATCH|Path|Play|RD|Register32|Register64|RegisterFile|RegPerm|RegPerm64|RegRead|RegRead64|Rename|Replace|Return|Run|Run64|RunAs|Service|Set|SetSystemRestorePoint|SharedDLLCounter|SharedDLLCounter64|Shortcut|System|Textfile|UnRegisterFile|Wait|WallPaper|WMIRead|WMIReadList|WriteInventory)\b</string>
+                <string>(^\s*|then\s*)\b(?i)(?:AddNet|Attrib|Begin Script|CancelNet|CancelSystemRestorePoint|CD|ChangePW|ClientConfig|Copy|Delete|End Script|Error|Exit|Expand|FileSystemRedirection|Font|IniRead|IniWrite|Inventory|Load Variables|Log|MD|MSI|MSIPATCH|Path|Play|RD|Register32|Register64|RegisterFile|RegPerm|RegPerm64|RegRead|RegRead64|Rename|Replace|Return|Run|Run64|RunAs|Service|Set|SetSystemRestorePoint|SharedDLLCounter|SharedDLLCounter64|Shortcut|System|Textfile|UnRegisterFile|Wait|WallPaper|WMIRead|WMIReadList|WriteInventory)\b</string>
             </dict>
             <dict>
                 <key>name</key>
@@ -53,24 +54,24 @@
                     <key>1</key>
                     <dict>
                         <key>name</key>
-                        <string>keyword.command.columbus<</string>
+                        <string>keyword.command.columbus</string>
                     </dict>
                     <key>2</key>
                     <dict>
                         <key>name</key>
                         <string>entity.name.function entity.name.tag</string>
                     </dict>
-                </dict>                
-                <key>name</key>
-                <!--<string>keyword.command.columbus</string>-->
+                </dict>
                 <key>match</key>
-                <string>\b(?i)(Goto)\b\s+([A-Za-z_]+)</string>
+                <string>\b(?i)(then\s*Goto|Goto)\b\s+([A-Za-z_0-9]+)</string>
+                <key>name</key>
+                <string>keyword.command.columbus</string>
             </dict>
             <dict>
                 <key>name</key>
                 <string>entity.name.function entity.name.tag</string>
                 <key>match</key>
-                <string>^\s*(:)([A-Za-z_]+)</string>
+                <string>^\s*(:)([A-Za-z_0-9]+)</string>
             </dict>
             <dict>
                 <key>name</key>
