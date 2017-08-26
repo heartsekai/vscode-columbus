@@ -1,9 +1,9 @@
 {
     "name": "brainwarecolumbus",
-    "displayName": "BrainwareColumbus",
+    "displayName": "Brainware Columbus",
     "description": "Helper for Columbus Packages",
     "version": "0.0.1",
-    "publisher": "CanLustenberger",
+    "publisher": "canlustenberger",
     "engines": { "vscode": "^1.0.0" },
     "main": "./out/src/extension",
     "categories": [ "Languages", "Snippets" ],

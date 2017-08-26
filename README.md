@@ -1,6 +1,6 @@
-# brainwarecolumbus README
+# Brainware Columbus Extension for Visual Studio Code
 
-This is the README for your extension "brainwarecolumbus". After writing up a brief description, we recommend including the following sections.
+This extension add syntax for Columbus packages from Brainware.
 
 ## Features
 
