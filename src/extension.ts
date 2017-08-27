@@ -4,6 +4,7 @@
 import * as vscode from 'vscode';
 import WMSHoverProvider from './hoverProvider';
 import WMSSymbolProvider from './symbolProvider';
+import WMSDefinitionProvider from './definitionProvider';
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
@@ -39,7 +40,9 @@ export function activate(context: vscode.ExtensionContext) {
     // context.subscriptions.push(disposable);
     context.subscriptions.push(vscode.languages.registerHoverProvider('Columbus', new WMSHoverProvider()));
 
-    context.subscriptions.push(vscode.languages.registerDocumentSymbolProvider('Columbus', new WMSSymbolProvider()))
+    context.subscriptions.push(vscode.languages.registerDocumentSymbolProvider('Columbus', new WMSSymbolProvider()));
+    
+    context.subscriptions.push(vscode.languages.registerDefinitionProvider('Columbus', new WMSDefinitionProvider()));
 }
 
 // this method is called when your extension is deactivated
