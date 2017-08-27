@@ -19,7 +19,7 @@ export default class WMSDocumentSymbolProvider implements DocumentSymbolProvider
                 new SymbolInformation(
                     e[1] + e[2] + e[3],
                     SymbolKind.Function,
-                    new Range(document.positionAt(e.index), document.positionAt(e.index) )
+                    new Range(document.positionAt(e.index + e[0].length), document.positionAt(e.index + e[0].length) )
                 )
             );
         }
@@ -32,7 +32,7 @@ export default class WMSDocumentSymbolProvider implements DocumentSymbolProvider
                 new SymbolInformation(
                     e[1],
                     SymbolKind.Variable,
-                    new Range(document.positionAt(e.index), document.positionAt(e.index) )
+                    new Range(document.positionAt(e.index + e[0].length), document.positionAt(e.index + e[0].length) )
                 )
             );
         }
