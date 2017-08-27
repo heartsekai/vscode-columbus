@@ -12,12 +12,10 @@ export default class WMSDefinitionProvider implements DefinitionProvider {
 
         let name = document.getText(keyword);
 
-        let regex = /goto (\w+)/mi;
+        let regex = new RegExp("(goto )(" + name + ")", "mi");
         let match: RegExpExecArray = null;
-        while (!token.isCancellationRequested &&(match = regex.exec(document.getText()))) {
-            if (match[1] == name) {
-                return new Location(document.uri, document.positionAt(match.index));
-            }
+        while (!token.isCancellationRequested && (match = regex.exec(document.getText()))) {
+            return new Location(document.uri, document.positionAt(match.index + match[1].length));
         }
 
     }
