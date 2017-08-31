@@ -25,7 +25,7 @@ export default class WMSDocumentSymbolProvider implements DocumentSymbolProvider
         }
 
         // add all goto
-        regex = /:(\w+)/gm;
+        regex = /^\s*:(\w+)/gm;
         e = null;
         while (!token.isCancellationRequested && (e = regex.exec(body))) {
             symbols.push(
